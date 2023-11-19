@@ -61,4 +61,5 @@ variable "cf_ram" {
 
 variable "cf_zip_file" {
   description = "Name of zip file"
+  default     = ""
 }

@@ -1,4 +1,6 @@
 resource "google_cloudfunctions_function" "default" {
+  count = var.cf_zip_file != "" ? 1 : 0
+  
   name                  = var.cf_name
   description           = "Cloud Function"
   runtime               = var.cf_runtime
