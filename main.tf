@@ -19,4 +19,8 @@ module "cloudfunction" {
   cf_entrypoint = var.cf_entrypoint
   cf_ram = var.cf_ram
   cf_zip_file = var.cf_zip_file
+
+  db_name = var.db_name
+  db_user = var.db_user
+  db_password = var.db_password
 }

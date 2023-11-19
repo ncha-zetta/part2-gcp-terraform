@@ -30,3 +30,17 @@ variable "cf_ram" {
 variable "cf_zip_file" {
   description = "Name of zip file"
 }
+
+variable "db_name" {
+  description = "name of db name"
+  default     = "part2-db"
+}
+
+variable "db_user" {
+  description = "Database password"
+  default     = "user"
+}
+
+variable "db_password" {
+  description = "Database password"
+}

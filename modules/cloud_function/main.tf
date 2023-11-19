@@ -14,6 +14,10 @@ resource "google_cloudfunctions_function" "default" {
 
   environment_variables = {
     # Env
+    DB_NAME     = var.db_name
+    DB_USER     = var.db_user
+    DB_PASSWORD = var.db_password
+    CLOUD_SQL_CONNECTION_NAME = "${var.gcp_project}:${var.region}:${google_sql_database_instance.default.name}"
   }
 }
 
