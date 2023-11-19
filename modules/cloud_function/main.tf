@@ -20,7 +20,7 @@ resource "google_cloudfunctions_function_iam_member" "public_invoker" {
 
   project        = var.gcp_project
   region         = var.region
-  cloud_function = google_cloudfunctions_function.default.name
+  cloud_function = google_cloudfunctions_function.default[0].name
   role           = "roles/cloudfunctions.invoker"
   member         = "allUsers"
 }
