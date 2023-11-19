@@ -11,7 +11,7 @@ resource "google_cloudfunctions_function" "default" {
   source_archive_object = local.source_archive_object
   entry_point           = var.cf_entrypoint
   trigger_http          = true
-  timeout               = "540s"
+  timeout               = 540
   max_instances         = 1
   
   environment_variables = {
