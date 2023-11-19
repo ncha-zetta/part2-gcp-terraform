@@ -11,7 +11,9 @@ resource "google_cloudfunctions_function" "default" {
   source_archive_object = local.source_archive_object
   entry_point           = var.cf_entrypoint
   trigger_http          = true
-
+  timeout               = "540s"
+  max_instances         = 1
+  
   environment_variables = {
     # Env
     DB_NAME     = var.db_name
