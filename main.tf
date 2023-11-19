@@ -1,18 +1,20 @@
 module "cloudsql" {
   source = "./modules/cloud_sql"
-  project_id = var.project_id
+
+  gcp_project = var.gcp_project
   region = var.region
+  db_name = var.db_name
+  db_user = var.db_user
+  db_password = var.db_password
 }
 
 module "cloudfunction" {
   source = "./modules/cloud_function"
-  project_id = var.project_id
+
+  gcp_project = var.gcp_project
   region = var.region
-  bucket_name = var.bucket_name
-  entry_point = var.entry_point
-  runtime = var.runtime
-  source_archive_bucket = var.source_archive_bucket
-  source_archive_object = var.source_archive_object
-  available_memory_mb = var.available_memory_mb
-  cloud_sql_connection_name = module.cloudsql.connection_name
+  cf_bucket_name = var.cf_bucket_name
+  cf_name = var.cf_name
+  cf_entrypoint = var.cf_entrypoint
+  cf_runtime = var.cf_runtime
 }

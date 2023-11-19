@@ -13,13 +13,8 @@ variable "bucket_name" {
   default     = "part2-ncha-zetta"
 }
 
-variable "db_name" {
-  description = "name of db name"
-  default     = "part2-db"
-}
-
 variable "db_user" {
-  description = "Database password"
+  description = "Database user"
   default     = "user"
 }
 
@@ -27,17 +22,22 @@ variable "db_password" {
   description = "Database password"
 }
 
-variable "entry_point" {
+variable "cf_name" {
+  description = "Name of Cloud Function"
+  default     = "part2-cf"
+}
+
+variable "cf_bucket_name" {
+  description = "name of db name"
+  default     = "part2-db"
+}
+
+variable "cf_entrypoint" {
   description = "The entry point of the Cloud Function"
   default     = "list_vpcs_and_subnets"
 }
 
-variable "runtime" {
-  description = "The runtime of the Cloud Function"
-  default     = "python39"
-}
-
-variable "available_memory_mb" {
+variable "cr_ram" {
   description = "Cloud Function RAM in MB"
   default     = 128
 }
