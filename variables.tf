@@ -41,7 +41,7 @@ variable "cf_name" {
 
 variable "cf_bucket_name" {
   description = "name of db name"
-  default     = "part2-db"
+  default     = "part2-app"
 }
 
 variable "cf_runtime" {
