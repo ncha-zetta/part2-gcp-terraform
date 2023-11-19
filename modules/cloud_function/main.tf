@@ -25,11 +25,11 @@ data "google_cloudfunctions_function" "default" {
 }
 
 resource "google_cloudfunctions_function_iam_member" "public_invoker" {
-  count = google_cloudfunctions_function.default[0].trigger_http ? 1 : 0
+  count = var.cf_zip_file != "" ? 1 : 0
 
   project        = var.gcp_project
   region         = var.region
-  cloud_function = google_cloudfunctions_function.default[0].name
+  cloud_function = google_cloudfunctions_function.default.name
   role           = "roles/cloudfunctions.invoker"
   member         = "allUsers"
 }
