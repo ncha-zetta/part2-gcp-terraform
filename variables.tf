@@ -1,3 +1,7 @@
+##############################################
+# Main
+##############################################
+
 variable "gcp_project" {
   description = "GCP project name"
   default     = "copper-index-405519"
@@ -8,9 +12,13 @@ variable "region" {
   default     = "us-east1"
 }
 
-variable "bucket_name" {
-  description = "GCP bucket name"
-  default     = "part2-ncha-zetta"
+##############################################
+# DB - Cloud SQL
+##############################################
+
+variable "db_name" {
+  description = "Cloud Sql Database name"
+  default     = "user"
 }
 
 variable "db_user" {
@@ -22,6 +30,10 @@ variable "db_password" {
   description = "Database password"
 }
 
+##############################################
+# Cloud Function
+##############################################
+
 variable "cf_name" {
   description = "Name of Cloud Function"
   default     = "part2-cf"
@@ -32,12 +44,17 @@ variable "cf_bucket_name" {
   default     = "part2-db"
 }
 
+variable "cf_runtime" {
+  description = "The runtime of the Cloud Function"
+  default     = "python39"
+}
+
 variable "cf_entrypoint" {
   description = "The entry point of the Cloud Function"
   default     = "list_vpcs_and_subnets"
 }
 
-variable "cr_ram" {
+variable "cf_ram" {
   description = "Cloud Function RAM in MB"
   default     = 128
 }

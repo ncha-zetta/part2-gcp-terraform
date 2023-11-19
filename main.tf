@@ -14,7 +14,8 @@ module "cloudfunction" {
   gcp_project = var.gcp_project
   region = var.region
   cf_bucket_name = var.cf_bucket_name
+  cf_runtime = var.cf_runtime
   cf_name = var.cf_name
   cf_entrypoint = var.cf_entrypoint
-  cf_runtime = var.cf_runtime
+  cf_ram = var.cf_ram
 }

@@ -23,6 +23,6 @@ variable "cf_entrypoint" {
   description = "The entry point of the Cloud Function"
 }
 
-variable "cr_ram" {
+variable "cf_ram" {
   description = "Cloud Function RAM in MB"
 }
