@@ -27,7 +27,6 @@ variable "cf_ram" {
   description = "Cloud Function RAM in MB"
 }
 
-variable "cf_zip_name" {
+variable "cf_zip_file" {
   description = "Name of zip file"
-  default     = "part2_cloud_function.zip"
 }

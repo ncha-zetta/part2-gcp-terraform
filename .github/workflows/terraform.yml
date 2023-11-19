@@ -6,6 +6,10 @@ on:
       - main
   pull_request:
   workflow_dispatch:
+    inputs:
+      TF_VAR_ZIP_FILE:
+        description: 'Short SHA of the app commit'
+        required: true
 
 jobs:
   terraform:
@@ -14,6 +18,7 @@ jobs:
     env:
       TF_VAR_db_password: ${{ secrets.DB_PASSWORD }}
       GOOGLE_CREDENTIALS: ${{ secrets.GCP_CREDENTIALS }}
+      TF_VAR_CF_ZIP_FILE: ${{ github.event.inputs.TF_VAR_ZIP_FILE }}
 
     steps:
     - name: Checkout
