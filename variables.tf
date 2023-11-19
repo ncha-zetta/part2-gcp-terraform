@@ -18,7 +18,7 @@ variable "region" {
 
 variable "db_name" {
   description = "Cloud Sql Database name"
-  default     = "user"
+  default     = "part2-cloud-function"
 }
 
 variable "db_user" {
