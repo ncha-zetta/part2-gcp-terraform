@@ -4,7 +4,7 @@ resource "google_cloudfunctions_function" "default" {
   runtime               = var.cf_runtime
   available_memory_mb   = var.cf_ram
   source_archive_bucket = var.cf_bucket_name
-  source_archive_object = var.cf_bucket_name
+  source_archive_object = var.cf_zip_name
   entry_point           = var.cf_entrypoint
   trigger_http          = true
 
